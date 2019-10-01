@@ -1,0 +1,13 @@
+#
+# internal python method
+#
+37 6-23 * * *  python:update()
+#
+# system command
+#
+5 7  * * 1-5    system:ssh pi@raspi4 "shutdown -P now"
+#
+# RF switch via iobroker on at sunrise and off at sunset
+#
+SUNRISE(-9) * * *   iobroker:pilight.0.brennenstuhl2d.state=true
+SUNSET(-6) * * *    iobroker:pilight.0.brennenstuhl2d.state=false
